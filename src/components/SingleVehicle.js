@@ -10,15 +10,14 @@ const SingleVehicle = ({
         <img src={media[0].url} alt={media[0].name} />
       </div>
       <div className="containers">
-        <p className="vehiclename">{media[0].name}</p>
+        <p className="vehiclename">{media[0].name.toUpperCase()}</p>
         <p>
-          price:
+          From
+          {' '}
           {price}
         </p>
         <p>{description}</p>
       </div>
-      
-    
             {/* <p>{meta.passengers}</p>
             <ul>
                 {meta.drivetrain.map((el) => (
