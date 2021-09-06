@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 /**
  * A utility function to make a network api call
@@ -7,11 +7,11 @@ import axios from "axios";
  * @return {Promise<Object>}
  */
 export async function request(apiUrl) {
-    try {
-        const { data } = await axios.get(apiUrl);
+  try {
+    const { data } = await axios.get(apiUrl);
 
-        return data;
-    } catch (error) {
-        return null;
-    }
+    return data;
+  } catch (error) {
+    return null;
+  }
 }

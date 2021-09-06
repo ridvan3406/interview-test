@@ -6,8 +6,8 @@ import useData from '../useData';
 jest.mock('../useData');
 
 describe('<VehicleList /> Tests', () => {
-  it('Should show loading state if it not falsy', () => {
-    useData.mockReturnValue([true, 'An error occurred', 'results']);
+  it.only('Should show loading state if it not falsy', () => {
+    useData.mockReturnValue([true, 'An error occurred', []]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId('loading')).not.toBeNull();

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SingleVehicle = ({
-  id, description, price, meta, modelYear, media
-}) => {
-  console.log(`/images/16x9/${id}_${modelYear}.jpg`);
+const SingleVehicle = ({ vehicle }) => {
+  const [show, setShow] = useState(false);
+  const {
+    id, description, price, meta, modelYear, media
+  } = vehicle;
+
   return (
-    <div className="card">
+    <div data-testid="single-vehicle-1" className="card">
       <div className="img">
         <img src={media[0].url} alt={media[0].name} />
       </div>
@@ -18,7 +20,16 @@ const SingleVehicle = ({
         </p>
         <p>{description}</p>
       </div>
-            {/* <p>{meta.passengers}</p>
+      {/* {
+       !show&& <button
+       onClick={()=>setShow(true)}
+       >Show</button>|| <button
+        onClick={()=>setShow(false)}
+        >hide</button>
+
+     }
+                 {show&&<>
+            <p>{meta.passengers}</p>
             <ul>
                 {meta.drivetrain.map((el) => (
                     <li>{el}</li>
@@ -37,9 +48,9 @@ const SingleVehicle = ({
                     value <span>{meta.emissions.value}</span>
                 </p>
                 <p>{modelYear}</p>
-            </div> */}
-        </div>
-    );
+            </div></>} */}
+    </div>
+  );
 };
 
 export default SingleVehicle;

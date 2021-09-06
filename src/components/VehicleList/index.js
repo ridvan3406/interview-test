@@ -14,11 +14,16 @@ export default function VehicleList() {
     return <div data-testid="error">{error}</div>;
   }
   if (vehicles.length > 0) {
-    return vehicles.map((vehicle, index) => (
-      <SingleVehicle
-        key={index}
-        {...vehicle} />
-    ));
+    return (
+      <div data-testid="vehicle">
+        {vehicles.map((vehicle, index) => (
+          <SingleVehicle
+            key={index.id}
+            vehicle={vehicle}
+          />
+        ))}
+      </div>
+    );
   }
 
   return (
